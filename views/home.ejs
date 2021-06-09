@@ -1,0 +1,22 @@
+
+<%-include("partials/header") %>
+
+
+<h1>Home</h1>
+
+
+<%= data %>
+
+<% dataPost %>
+
+<% dataPost.forEach(function (post) { %>
+    <%console.log(post.title);%>
+  <h1><%= post.title %></h1>
+  <p> <%= post.content.substring(1, 100) + "..." %> <a href="/posts/<%=post._id%>">Read More</a> </p>
+
+<% }); %>
+
+<br><br><br>
+<button class="btn-light btn" type="submit"><a href="/compose">COMPOSE POST</a></button>
+
+<%-include("partials/footer") %>
